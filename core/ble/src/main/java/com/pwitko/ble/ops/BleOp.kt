@@ -65,6 +65,7 @@ internal sealed class BleOp<T: Any> {
 @VisibleForTesting
 internal object NoOp : BleOp<Unit>() {
     override fun executeInternal(emitter: ObservableEmitter<Unit>) {
+        emitter.onNext(Unit)
         emitter.onComplete()
     }
 }
